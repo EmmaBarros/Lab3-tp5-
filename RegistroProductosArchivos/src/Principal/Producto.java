@@ -1,6 +1,6 @@
 
 package Principal;
-
+import Consola.Consola;
 public class Producto {
    private String nombre;
    private double precio;
@@ -14,11 +14,19 @@ public class Producto {
         this.nombre = "";
         this.precio = 0;
     }
+     public void cargarDatos(){
+         System.out.println("ingrese el nombre");
+         String nombre = Consola.leerString();
+         setNombre(nombre);
+         System.out.println("ingrese el precio");
+         double prec = Consola.leerDouble();
+         setPrecio(prec);
+     }
     
 
     @Override
     public String toString() {
-        return "Producto \n" + "nombre :" + nombre + ", precio :" + precio + '}';
+        return nombre + "," + precio ;
     }
    
    public static Producto fromString(String linea){
@@ -31,5 +39,24 @@ public class Producto {
      }
      return null;//si la linea esta vacia devolvemos null
    }
+   
+   //
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    private void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    private void setPrecio(double precio) {
+        this.precio = precio;
+    }
+   
     
 }
