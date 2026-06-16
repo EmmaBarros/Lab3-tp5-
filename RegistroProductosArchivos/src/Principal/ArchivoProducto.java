@@ -20,8 +20,8 @@ public class ArchivoProducto {
              }
              System.out.println("Archivo escrito Correctamente");
          }catch(IOException e){
-             System.out.println("Error al escribir el archivo "+e.getMessage()
-             );
+             System.out.println("Error al escribir el archivo "+e.getMessage());
+             
          }
      }
      
